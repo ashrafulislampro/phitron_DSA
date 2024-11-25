@@ -1,1 +1,4 @@
-NO
+2 rakib D 96
+2 rakib D 96
+1 sakib A 50
+3 akib C 99

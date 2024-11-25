@@ -6,24 +6,14 @@ public:
     int ID;
     char name[100];
     char section;
-    double total_marks;
+    double marks;
 
     void display()
     {
-        cout << ID << " " << name << " " << section << " " << total_marks << endl;
+        cout << ID << " " << name << " " << section << " " << marks << endl;
     }
 };
-bool compare(const Student &a, const Student &b)
-{
-    
 
-    if (a.total_marks != b.total_marks)
-    {
-        return a.total_marks > b.total_marks;
-    }   
-   
-    return a.ID < b.ID;
-}
 int main()
 {
     int t;
@@ -34,14 +24,33 @@ int main()
         Student b;
         Student c;
 
-        cin >> a.ID >> a.name >> a.section >> a.total_marks;
-        cin >> b.ID >> b.name >> b.section >> b.total_marks;
-        cin >> c.ID >> c.name >> c.section >> c.total_marks;
+        cin >> a.ID >> a.name >> a.section >> a.marks;
+        cin >> b.ID >> b.name >> b.section >> b.marks;
+        cin >> c.ID >> c.name >> c.section >> c.marks;
 
-        vector<Student> students = {a, b, c};
-        sort(students.begin(), students.end(), compare);
-
-        students[0].display();
+        if ((a.marks > b.marks) && (a.marks > c.marks))
+        {
+            a.display();
+        }
+        
+        else if ((b.marks > a.marks) && (b.marks > c.marks))
+        {
+            b.display();
+        }else if ((c.marks > a.marks) && (c.marks > b.marks))
+        {
+            c.display();
+        }
+        else if ((a.marks == b.marks && a.ID < b.ID) || (a.marks == c.marks && a.ID < c.ID))
+        {
+            a.display();
+        }
+        else if ((b.marks == a.marks && b.ID < a.ID) || (b.marks == c.marks && b.ID < c.ID))
+        {
+            b.display();
+        }else{
+            c.display();
+        }
+        
     }
     return 0;
 }

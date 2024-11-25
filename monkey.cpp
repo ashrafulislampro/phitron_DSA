@@ -1,24 +1,23 @@
 #include <bits/stdc++.h>
+
 using namespace std;
+#define Max_Size 100001
 
 int main()
 {
-    string str;
-
-    while (getline(cin, str))
-    {
-        sort(str.begin(), str.end());
-
-        for (int j = 0; j < str.length(); j++)
-        {
-            if (str[j] == ' ')
-            {
+    char str[Max_Size];
+    while(cin.getline(str, Max_Size)){        
+        char filterStr[Max_Size];
+        int j = 0;
+        for(int i = 0; str[i] != '\0'; i++){
+            if(str[i] != ' '){
+                filterStr[j] = str[i];
                 j++;
-                continue;
-            }
-            cout << str[j];
+            };            
         }
-        cout << endl;
+       filterStr[j] = '\0';
+        sort(filterStr, filterStr+j);
+        cout<<filterStr<<endl;
     }
     return 0;
 }
