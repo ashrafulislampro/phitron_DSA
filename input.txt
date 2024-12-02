@@ -1,7 +1,4 @@
-3
-sakib khan
-1 50
-rakib
-2 96
-akib
-3 90
+3 
+sakib 1 100
+rakib 2 96
+akib 3 90
