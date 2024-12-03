@@ -1,1 +1,1 @@
-marks
+ // cout << word.size() << " == " << j << endl;
